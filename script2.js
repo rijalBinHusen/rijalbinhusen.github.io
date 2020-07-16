@@ -90,23 +90,17 @@ Mcstm.a053 = (a, b, c, d, e) => { //new element
 }	
 
 Mcstm.fu001 = (a,b,c) => { //ajax ke server 
-//a=url, b=data yang direquest
-var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function () {
-		if (this.readyState == 4 && this.status == 200) {
-	    	Mcstm.fu004(c, JSON.parse(this.responseText));
-		}
-	}  
-	xhttp.open("POST", a, true);
-	xhttp.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-	xhttp.send(b);
+ //if (a == "baca") {
+ 	Mcstm.fu004(a, datanya);
+ 	//return datanya;
+ //}
 }
 
-Mcstm.fu002 = (a) => { //membuat request
+/*Mcstm.fu002 = (a) => { //membuat request
 	//a[0]=fungsi a[1]=angka a[2]=kata
-	if(a[0] == "baca") {
-		let d = "angka="+a[1]+"&kata="+a[2];
-		Mcstm.fu001("/"+a[0], d, a);
+	if(a == "baca") {
+		//let d = "angka="+a[1]+"&kata="+a[2];
+		Mcstm.fu001(a[0], a[1], a[2]);
 	} else if (a[0] == "tulis") {
 		Mcstm.fu001("/"+a[0], "dikirim="+JSON.stringify(Mcstm.a062("tulis")), a)
 	} else if (a[0] == "hapus") {
@@ -115,10 +109,10 @@ Mcstm.fu002 = (a) => { //membuat request
 	} else if (a[0] == "update") {
 		Mcstm.fu001("/"+a[0], "dikirim="+JSON.stringify(Mcstm.a062(a[1])), a);
 	}
-}
+} */
 
 Mcstm.fu004 = (a,b) => { //memproses respone server
-	//a[0]=fungsi a[1]=angka a[2]=kata, b=data
+	/*a[0]=fungsi a[1]=angka a[2]=kata, b=data
 	if (a[0] == "baca" && b.status == 200 && a[2] == "%") {
 		Mcstm.fu006(b.value, "ar002", "ar003", a); w3.show("#ar004");w3.hide("#ar005");
 	} else if (a[0] == "baca" && b.status == 200 && a[2] !== "") {
@@ -133,7 +127,8 @@ Mcstm.fu004 = (a,b) => { //memproses respone server
 	} else if (a[0] == "update") {
 		document.querySelector("#"+a[1]+" .w3-padding-16").innerHTML = Mcstm.fu008(Mcstm.a063().getContent());
 		Mcstm.a063().setContent(''); w3.hide("#ar006");
-	}
+	}*/
+	return b;
 }
 
 Mcstm.fu006 = (a,b,c,d) => { // menampilkannya
