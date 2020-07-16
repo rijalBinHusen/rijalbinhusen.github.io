@@ -1,0 +1,92 @@
+body {
+margin:0;
+padding:0;
+background: rgb(255,255,255);
+}
+
+#formLogin {
+	width:30%;
+	padding:1%;
+	height:auto;
+	top:2%;
+	position:absolute;
+	left:64%;
+	background:rgba(0,0,0,0.22);
+	border:3px solid;	
+	border-radius:10px;
+}
+
+#formLogin input[type="text"], #formLogin input[type="password"] {
+	width:auto;
+	border:1px solid;
+	background:#fff;
+	padding:3px;
+}
+
+#formLogin input[type="submit"] {
+	border-radius:4px;
+	cursor:pointer;
+	border:1px solid black;
+	background:#fff;
+}
+
+#navbar {
+	position:absolute;
+    background:rgb(64,58,58);
+    width:99.5%;
+    height: 40px;
+    text-align: center;
+    padding: 1px;
+    transition:0.8s;
+	vertical-align:center;
+}
+
+.fontnavbar {
+    color:white;
+    cursor:pointer;
+    font-family: sans-serif;
+    font-size: 100%;
+	letter-spacing: 4px;
+}
+/*-----------------------------------------------HP HP HP HP HP--------------------------------------------------*/
+
+@media only screen and (max-width:768px) {
+	#formLogin {
+		width:90%;
+		height:10%;
+		background:rgba(0,0,0,0.22);
+		top:2%;
+		left:1%;
+		position:absolute;
+		padding:3%;
+		border-radius:10px;
+		border:3px solid;
+		text-align:center;
+	}
+	
+	#formLogin input[type="text"], #formLogin input[type="password"] {
+		width:70%;
+		height:30%;
+		border:1px solid;
+		background:#fff;
+		padding:3%;
+		font-size:75%;
+	}
+	
+	#formLogin input[type="submit"] {
+		border-radius:9px;
+		cursor:pointer;
+		border:1px solid;
+		width:30%;
+		height:30%;
+	}
+	
+	.fontnavbar {
+		color:white;
+		cursor:pointer;
+		font-family: sans-serif;
+		font-size: 80%;
+		letter-spacing: 0px;
+}
+
+}

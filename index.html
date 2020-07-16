@@ -1,0 +1,95 @@
+<html>
+<head>
+<link href="/public/w3.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bismillah</title>
+<style rel="stylesheet">
+a {
+text-decoration:none;
+}
+
+#ar000, #ar028, .seksion {
+	box-sizing: border-box;
+	transition: 0.5s;
+}
+
+#ar004, #ar005 {
+word-wrap:break-word;
+}
+
+
+@media only screen and (max-width:600px) {
+	.sticky {
+	  position: -webkit-sticky;
+	  position: sticky;
+	  top: 0px;
+	}
+}
+
+</style>
+</head>
+<body>
+<div id="ar000" class="w3-round-xlarge w3-top">
+	<div class="w3-bar w3-black w3-card-4 w3-padding">
+		<a onclick="w3.show('#ar004');w3.hide('#ar005')" class="w3-bar-item w3-button w3-bottombar w3-border-green">Read</a>
+		<a onclick="Mcstm.a002();w3.show('#ar006');w3.show('#ar029');w3.hide('#ar030');w3.show('ar007');w3.hide('ar011')" class="w3-bar-item w3-button w3-bottombar w3-border-green">Write</a>
+		<input onchange="Mcstm.fu002(['baca', 0, this.value])" onclick="w3.show('#ar005');w3.hide('#ar004')" id="ar022" type="text" class="w3-bar-item w3-bottombar w3-border-green w3-input w3-white w3-right" placeholder="Search...">
+	</div>
+</div>
+<div class="w3-container">		
+	<div id="ar001" class="w3-container w3-border w3-border-green w3-round-large w3-padding-48 w3-margin-top w3-margin-bottom">
+		<div id="ar004"></div>
+		<div id="ar005" style="display:none;"></div>
+		<div id="ar006" class="w3-modal seksion">
+			<span onclick="w3.hide('#ar006')" class="w3-button w3-xlarge w3-red w3-display-topright w3-text-black">&times;</span>
+			<div style="width:97%; height:97%; overflow-x: hidden; overflow-y: auto;" class=" w3-modal-content">
+				<textarea class="w3-margin-right" name="ar007" id="ar007" style="height:68vh; width:95vw; margin:0; padding:0; overflow:auto; z-index:999999;"></textarea>
+				<button onclick="Mcstm.fu002(['tulis', '', ''])" id="ar029" class="w3-button w3-margin-top w3-green">Send</button>
+				<button style="display:none" id="ar030" class="w3-button w3-margin-top w3-green">Update</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="ar011" style="display:none" class="w3-green w3-right w3-round w3-border w3-border-black w3-left w3-margin">
+		<div id="ar012">
+			<p class="w3-xxlarge w3-center">Login</p>
+		<input class="w3-large w3-margin" type="text" placeholder="User name">
+		<div>
+			<input class="w3-large w3-margin" type="password" placeholder="Password">
+		</div>
+		<div>
+			<input class="w3-margin w3-button w3-white" type="submit" value="login">
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript" src="/public/nicEdit.js"></script>
+<script type="text/javascript" src="/public/script2.js"></script>
+<script type="text/javascript" src="/public/script.js"></script>	
+<script type="text/javascript" src="/public/w3.js"></script>
+<script type="text/javascript">
+Mcstm.fu002(["baca", 0, "%"]);
+var lastScrollTop = 0,
+navbar = document.getElementById('ar000');
+
+window.addEventListener("scroll", function() {
+	var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	if (scrollTop > lastScrollTop) {
+		navbar.style.top = "-80px";
+	} else {
+		navbar.style.top= "0";
+	}
+	lastScrollTop = scrollTop;
+
+});
+
+bkLib.onDomLoaded(function() {
+	nicEditors.allTextAreas()
+	//w3.hide('#ar000'); w3.hide('#ar001'); 
+	w3.hide('#ar011')
+});
+</script>
+<body>
+
+</html>
