@@ -112,8 +112,8 @@ Mcstm.fu001 = (a,b,c) => { //ajax ke server
 } */
 
 Mcstm.fu004 = (a,b) => { //memproses respone server
-	/*a[0]=fungsi a[1]=angka a[2]=kata, b=data
-	if (a[0] == "baca" && b.status == 200 && a[2] == "%") {
+	//a[0]=fungsi a[1]=angka a[2]=kata, b=data
+	if (a[0] == "baca" /*&& b.status == 200 && a[2] == "%"*/) {
 		Mcstm.fu006(b.value, "ar002", "ar003", a); w3.show("#ar004");w3.hide("#ar005");
 	} else if (a[0] == "baca" && b.status == 200 && a[2] !== "") {
 		Mcstm.fu006(b.value, "arn002", "arn003", a); w3.show("#ar005");w3.hide("#ar004");
@@ -127,15 +127,14 @@ Mcstm.fu004 = (a,b) => { //memproses respone server
 	} else if (a[0] == "update") {
 		document.querySelector("#"+a[1]+" .w3-padding-16").innerHTML = Mcstm.fu008(Mcstm.a063().getContent());
 		Mcstm.a063().setContent(''); w3.hide("#ar006");
-	}*/
-	return b;
+	}
 }
 
 Mcstm.fu006 = (a,b,c,d) => { // menampilkannya
 	//a=data, b=area1, c=area2, d[0]=fungsi d[1]=angka d[2]=kata
-	if (d[1] == 0 && d[2] == "%") {
+	/*if (d[1] == 0 && d[2] == "%") {
 		Mcstm.a017 = Mcstm.a004(a[0].id);
-	}
+	} */
 	if (d[2] == "%") {
 		var tampilnya = Mcstm.a001("ar004");
 	} else if (d[0] !== "") {
@@ -153,7 +152,7 @@ Mcstm.fu006 = (a,b,c,d) => { // menampilkannya
 			elm1.appendChild(elm2);
 			tampilnya.appendChild(elm1);
 		} else if(a.length < 20) {
-			tampilnya.appendChild(Mcstm.fu005("p", "", "", "", "w3-center", "Data sudah ditampilkan semua", ""));
+			tampilnya.appendChild(Mcstm.fu005("p", "", "", "", "w3-center", "All data has been displayed", ""));
 		}
 	}
 }
