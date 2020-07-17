@@ -132,9 +132,9 @@ Mcstm.fu004 = (a,b) => { //memproses respone server
 
 Mcstm.fu006 = (a,b,c,d) => { // menampilkannya
 	//a=data, b=area1, c=area2, d[0]=fungsi d[1]=angka d[2]=kata
-	/*if (d[1] == 0 && d[2] == "%") {
+	if (d[1] == 0 && d[2] == "%") {
 		Mcstm.a017 = Mcstm.a004(a[0].id);
-	} */
+	}
 	if (d[2] == "%") {
 		var tampilnya = Mcstm.a001("ar004");
 	} else if (d[0] !== "") {
