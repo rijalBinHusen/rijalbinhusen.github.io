@@ -124,7 +124,7 @@ Mcstm.fu004 = (a,b) => { //memproses respone server
 	} else if (a[0] == "baca" && b.status == 200 && a[2] !== "") {
 		Mcstm.fu006(b.value, "arn002", "arn003", a); w3.show("#ar005");w3.hide("#ar004");
 	} else if(a[0] == "tulis" && b.status == 200){
-		Mcstm.Mcstm.fu008(b);
+		Mcstm.fu003(b);
 	} else if (a[0] == "hapus" && b.status == 200) {
 		var c = Mcstm.a001(a[1]);
 		c.setAttribute("onmouseover", "");
