@@ -23,8 +23,13 @@ Mcstm.a005 = (a) => {
 	w3.show("#ar006"); w3.show("#ar030"); w3.hide("#ar029");
 }
 
-Mcstm.a002 = () => {
+Mcstm.a002 = (a) => {
+	if (a == null) {
 	Mcstm.a016 = Mcstm.a003()[0]+"-"+Mcstm.a003()[1]+"-"+Mcstm.a003()[2]+" "+Mcstm.a003()[3]+":"+Mcstm.a003()[4]+":"+Mcstm.a003()[5];
+	} else {
+		return Mcstm.a003(a)[0]+"-"+Mcstm.a003(a)[1]+"-"+Mcstm.a003(a)[2]+" "+Mcstm.a003(a)[3]+":"+Mcstm.a003(a)[4]+":"+Mcstm.a003(a)[5];
+	}
+
 }
 
 Mcstm.a004 = (a) => { //kode catatan selanjutnya
@@ -91,7 +96,7 @@ Mcstm.a053 = (a, b, c, d, e) => { //new element
 
 Mcstm.fu001 = (a,b,c) => { //ajax ke server 
 	if (a[0] == "baca") {
- 	Mcstm.fu004(a, datanya);
+ 	Mcstm.fu004(a, Mcstm.fu009(datanya));
  }
 }
 
@@ -139,11 +144,12 @@ Mcstm.fu006 = (a,b,c,d) => { // menampilkannya
 	} else if (d[0] !== "") {
 		var tampilnya = Mcstm.a001("ar005");
 	} if(d[1] == 0) { tampilnya.innerHTML = "";}
+	const f = Mcstm.a003(a)
 	if (tampilnya) {
 		for (let i = 0; i < a.length; i++) {
-			let hasilnya = Mcstm.a053(a[i].id, a[i].tanggal, b, c, a[i].isi);
+			let hasilnya = Mcstm.a053(a[i].id, Mcstm.a002(a[i].tanggal), b, c, a[i].isi);
 			tampilnya.appendChild(hasilnya);
-			Mcstm.fu007(a[i].tanggal, b+a[i].id, c+a[i].id);
+			Mcstm.fu007(Mcstm.a002(a[i].tanggal), b+a[i].id, c+a[i].id);
 		}
 		if(a.length == 20) {
 			const elm1 = Mcstm.fu005("div", "", "", "", "w3-center", "", "");
@@ -299,4 +305,16 @@ Mcstm.fu008 = (va024) => { //dipakai fungsi hhastag
 		return hasilAkhir;
 	}
 		return va024;
+}
+
+Mcstm.fu009 = (a) => {
+	let b = a.value.slice(0);
+	for (let i=0; i<b.length; i++) {
+		b[i].tanggal = (new Date(b[i].tanggal)).getTime()
+	}
+	let c = b.sort( function (a,b) {
+		return b.tanggal - a.tanggal
+	})
+
+	return {"status" : 200, "value" : c }
 }
