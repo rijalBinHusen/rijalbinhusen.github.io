@@ -37,14 +37,14 @@ Mcstm.a004 = (a) => { //kode catatan selanjutnya
 	if (Mcstm.a003()[0] == b[1] && Mcstm.a003()[1] == b[2]) {
 		var c = b[0]+b[1]+b[2]+(parseInt(b[3])+1);
 	} else if (Mcstm.a003()[0] == b[1]) {
-		var c = b[0]+b[1]+(Mcstm.a003()[1]<10? '0':'')+Mcstm.a003()[1]+"0";
+		var c = b[0]+b[1]+Mcstm.a003()[1]+"0";
 	} else {
-		var c = b[0]+(Mcstm.a003()[0]<10? '0':'')+Mcstm.a003()[0]+Mcstm.a003()[1]+0;
+		var c = b[0]+Mcstm.a003()[0]+Mcstm.a003()[1]+0;
 	}
 	return c;
 }
 
-Mcstm.a003 = (a) => { //waktu //tahun, bulan, tanggal, jam, menit, detik, numeric value
+Mcstm.a003 = (a) => { //tahun, bulan, tanggal, jam, menit, detik, numeric value
 	const arrBulan = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 	if (a == null) {
 		var b = new Date();
@@ -94,21 +94,18 @@ Mcstm.a053 = (a, b, c, d, e) => { //new element
 	return elm1;
 }	
 
-Mcstm.fu001 = (a,b,c) => { //ajax ke server 
-	if (a[0] == "baca") {
- 	Mcstm.fu004(a, Mcstm.fu009(datanya));
- 	} else if(a[0] == "tulis") {
-
- 	}
-}
+// Mcstm.fu001 = (a,b,c) => { //ajax ke server 
+// 	if (a[0] == "baca") {
+ 	
+//  	}
+// }
 
 Mcstm.fu002 = (a) => { //membuat request
 	//a[0]=fungsi a[1]=angka a[2]=kata
 	if(a[0] == "baca") {
-		//let d = "angka="+a[1]+"&kata="+a[2];
-		Mcstm.fu001(a, "", "");
+		Mcstm.fu004(a, Mcstm.fu009(datanya));
 	} else if (a[0] == "tulis") {
-		Mcstm.fu001("tulis", "", ""/*"/"+a[0], "dikirim="+JSON.stringify(Mcstm.a062("tulis")), a*/)
+		Mcstm.fu003(a);
 	} else if (a[0] == "hapus") {
 		let b = confirm("Are you sure to delete that note?");
 		if (b) { Mcstm.fu001("/"+a[0], "req003="+a[1], a) }
@@ -176,7 +173,7 @@ Mcstm.fu005 = (a,b,c,d,e,f,g) => { //membuat element
 }
 
 Mcstm.fu003 = (a) => {
-	if (a.value[0] == "tulis") {
+	if (a[0] == "tulis") {
 		w3.hide("#ar006"); //sembunyikan modal
 		let hasilnya = Mcstm.a053(Mcstm.a017, Mcstm.a016, "ar002", "ar003", Mcstm.a063().getContent()); //buat element untuk ditampilkan
 		Mcstm.a001("ar004").insertBefore(hasilnya, Mcstm.a001("ar004").childNodes[0]); //tampilkan element diatas sendiri(terbaru)
