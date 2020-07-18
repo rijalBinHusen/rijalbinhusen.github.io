@@ -32,9 +32,9 @@ Mcstm.a004 = (a) => { //kode catatan selanjutnya
 	if (Mcstm.a003()[0] == b[1] && Mcstm.a003()[1] == b[2]) {
 		var c = b[0]+b[1]+b[2]+(parseInt(b[3])+1);
 	} else if (Mcstm.a003()[0] == b[1]) {
-		var c = b[0]+b[1]+(Mcstm.a003()[1]<10? '0':'')+Mcstm.a003()[1]+"0";
+		var c = b[0]+b[1]+Mcstm.a003()[1]+"0";
 	} else {
-		var c = b[0]+(Mcstm.a003()[0]<10? '0':'')+Mcstm.a003()[0]+Mcstm.a003()[1]+0;
+		var c = b[0]+Mcstm.a003()[0]+Mcstm.a003()[1]+0;
 	}
 	return c;
 }
