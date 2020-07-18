@@ -97,7 +97,9 @@ Mcstm.a053 = (a, b, c, d, e) => { //new element
 Mcstm.fu001 = (a,b,c) => { //ajax ke server 
 	if (a[0] == "baca") {
  	Mcstm.fu004(a, Mcstm.fu009(datanya));
- }
+ 	} else if(a[0] == "tulis") {
+
+ 	}
 }
 
 Mcstm.fu002 = (a) => { //membuat request
@@ -106,7 +108,7 @@ Mcstm.fu002 = (a) => { //membuat request
 		//let d = "angka="+a[1]+"&kata="+a[2];
 		Mcstm.fu001(a, "", "");
 	} else if (a[0] == "tulis") {
-		Mcstm.fu001("/"+a[0], "dikirim="+JSON.stringify(Mcstm.a062("tulis")), a)
+		Mcstm.fu001("tulis", "", ""/*"/"+a[0], "dikirim="+JSON.stringify(Mcstm.a062("tulis")), a*/)
 	} else if (a[0] == "hapus") {
 		let b = confirm("Are you sure to delete that note?");
 		if (b) { Mcstm.fu001("/"+a[0], "req003="+a[1], a) }
