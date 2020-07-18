@@ -90,17 +90,16 @@ Mcstm.a053 = (a, b, c, d, e) => { //new element
 }	
 
 Mcstm.fu001 = (a,b,c) => { //ajax ke server 
- //if (a == "baca") {
+	if (a[0] == "baca") {
  	Mcstm.fu004(a, datanya);
- 	//return datanya;
- //}
+ }
 }
 
-/*Mcstm.fu002 = (a) => { //membuat request
+Mcstm.fu002 = (a) => { //membuat request
 	//a[0]=fungsi a[1]=angka a[2]=kata
-	if(a == "baca") {
+	if(a[0] == "baca") {
 		//let d = "angka="+a[1]+"&kata="+a[2];
-		Mcstm.fu001(a[0], a[1], a[2]);
+		Mcstm.fu001(a, "", "");
 	} else if (a[0] == "tulis") {
 		Mcstm.fu001("/"+a[0], "dikirim="+JSON.stringify(Mcstm.a062("tulis")), a)
 	} else if (a[0] == "hapus") {
@@ -109,7 +108,7 @@ Mcstm.fu001 = (a,b,c) => { //ajax ke server
 	} else if (a[0] == "update") {
 		Mcstm.fu001("/"+a[0], "dikirim="+JSON.stringify(Mcstm.a062(a[1])), a);
 	}
-} */
+}
 
 Mcstm.fu004 = (a,b) => { //memproses respone server
 	//a[0]=fungsi a[1]=angka a[2]=kata, b=data
