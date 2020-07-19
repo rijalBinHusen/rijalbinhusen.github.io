@@ -150,7 +150,7 @@ Mcstm.fu006 = (a,b,c,d) => { // menampilkannya
 			tampilnya.appendChild(hasilnya);
 			Mcstm.fu007(Mcstm.a002(a[i].tanggal), b+a[i].id, c+a[i].id);
 		}
-		if(a.length == 20) {
+		if(a.length == 6) {
 			const elm1 = Mcstm.fu005("div", "", "", "", "w3-center", "", "");
 			const elm2 = Mcstm.fu005("button", "", "onclick", "Mcstm.fu002(['"+d[0]+"',"+parseInt(d[1]+20)+",'"+d[2]+"']);w3.hide(this)", "w3-margin-top w3-mobile w3-button w3-white w3-border w3-border-green w3-hover-blue-gray", "Tampilkan lagi.", "");
 			elm1.appendChild(elm2);
@@ -307,7 +307,7 @@ Mcstm.fu008 = (va024) => { //dipakai fungsi hhastag
 }
 
 Mcstm.fu009 = (a) => {
-	let b = a.value.slice(0);
+	let b = a.value.slice(0, 20);
 	for (let i=0; i<b.length; i++) {
 		b[i].tanggal = (new Date(b[i].tanggal)).getTime()
 	}
